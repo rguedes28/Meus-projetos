@@ -1,0 +1,36 @@
+
+
+plugins {
+    id 'org.jetbrains.intellij' version '1.2.0'
+    id 'java'
+}
+
+group 'br.com.cwi'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+   }
+dependencies {
+    testImplementation 'junit',name:'junit',version:'4,12'
+    testRuntimeOnly 'org.seleniummhq.selenium',name:'selenium=java',version:'2.53.0'
+
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version = '2021.2.1'
+}
+patchPluginXml {
+    changeNotes = """
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>"""
+}
+test {
+    useJUnitPlatform()
+}
